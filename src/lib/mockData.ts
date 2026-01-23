@@ -70,6 +70,11 @@ export const mockProducts: Product[] = [
     updated_at: new Date().toISOString(),
     categories: { name: "Bags", slug: "bags" },
   },
+    { id: "213", name: "Quilted Chain Bag", slug: "quilted-chain-bag", description: "Quilted design with chain strap.", price: 220, category_id: "2", image_url: "https://i.pinimg.com/736x/76/2d/76/762d76c26ec830e14b0ab647564bc3fd.jpg", images: ["https://i.pinimg.com/736x/76/2d/76/762d76c26ec830e14b0ab647564bc3fd.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+
+    { id: "222", name: "Evening Clutch", slug: "evening-clutch", description: "Elegant clutch for nights out.", price: 140, category_id: "2", image_url: "https://i.pinimg.com/1200x/d9/02/b6/d902b6eaf123fdfc3050deaf939f228e.jpg", images: ["https://i.pinimg.com/1200x/d9/02/b6/d902b6eaf123fdfc3050deaf939f228e.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+
+
   {
     id: "103",
     name: "Diamond Solitaire Ring",
@@ -77,8 +82,8 @@ export const mockProducts: Product[] = [
     description: "Exquisite diamond solitaire ring set in 18k gold.",
     price: 899,
     category_id: "3",
-    image_url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80",
-    images: ["https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80"],
+    image_url: "https://i.pinimg.com/1200x/25/66/93/2566934561c93a764f1f8bb18ebb8651.jpg",
+    images: ["https://i.pinimg.com/1200x/25/66/93/2566934561c93a764f1f8bb18ebb8651.jpg"],
     in_stock: true,
     featured: true,
     created_at: new Date().toISOString(),
@@ -96,8 +101,8 @@ export const mockProducts: Product[] = [
     description: "Spacious tote bag for all your needs.",
     price: 180,
     category_id: "2",
-    image_url: "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&q=80",
-    images: ["https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&q=80"],
+    image_url: "https://i.pinimg.com/1200x/20/b3/01/20b3013cadb5899f92a8f5787d8dd511.jpg",
+    images: ["https://i.pinimg.com/1200x/20/b3/01/20b3013cadb5899f92a8f5787d8dd511.jpg"],
     in_stock: true,
     featured: false,
     created_at: new Date().toISOString(),
@@ -143,8 +148,8 @@ export const mockProducts: Product[] = [
     description: "Classic gold chain bracelet.",
     price: 120,
     category_id: "4",
-    image_url: "https://i.pinimg.com/1200x/0a/6d/a1/0a6da1bc579b2d5ffcdb821182ee8acd.jpg",
-    images: ["https://i.pinimg.com/1200x/0a/6d/a1/0a6da1bc579b2d5ffcdb821182ee8acd.jpg"],
+    image_url: "https://i.pinimg.com/736x/51/d5/99/51d599ccb97afd4b7371dd917e0b2e2d.jpg",
+    images: ["https://i.pinimg.com/736x/51/d5/99/51d599ccb97afd4b7371dd917e0b2e2d.jpg"],
     in_stock: true,
     featured: false,
     created_at: new Date().toISOString(),
@@ -158,8 +163,8 @@ export const mockProducts: Product[] = [
     description: "Elegant fresh water pearl bracelet.",
     price: 140,
     category_id: "4",
-    image_url: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80",
-    images: ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80"],
+    image_url: "https://i.pinimg.com/1200x/90/d6/7c/90d67c234fcf2683a04f2eebfcd65dd9.jpg",
+    images: ["https://i.pinimg.com/1200x/90/d6/7c/90d67c234fcf2683a04f2eebfcd65dd9.jpg"],
     in_stock: true,
     featured: true,
     created_at: new Date().toISOString(),
@@ -189,21 +194,28 @@ export const mockProducts: Product[] = [
   { id: "209", name: "Moonstone Pendant", slug: "moonstone-pendant", description: "Iridescent moonstone pendant.", price: 160, category_id: "1", image_url: "https://i.pinimg.com/1200x/c3/f2/b4/c3f2b4d97920c66bf119500610e8e682.jpg", images: ["https://i.pinimg.com/1200x/c3/f2/b4/c3f2b4d97920c66bf119500610e8e682.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Jewelry", slug: "jewelry" } },
   { id: "210", name: "Geometric Necklace", slug: "geometric-necklace", description: "Modern geometric shapes.", price: 110, category_id: "1", image_url: "https://i.pinimg.com/736x/c9/7a/38/c97a3861d68272083444696810e60e89.jpg", images: ["https://i.pinimg.com/736x/c9/7a/38/c97a3861d68272083444696810e60e89.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Jewelry", slug: "jewelry" } },
   { id: "211", name: "Floral Charm Necklace", slug: "floral-charm-necklace", description: "Delicate floral charm piece.", price: 125, category_id: "1", image_url: "https://i.pinimg.com/736x/51/3e/ed/513eed163c00d8a3d38044544bf704f1.jpg", images: ["https://i.pinimg.com/736x/51/3e/ed/513eed163c00d8a3d38044544bf704f1.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Jewelry", slug: "jewelry" } },
+
   // Additional Bags (14 more)
-  { id: "212", name: "Mini Shoulder Bag", slug: "mini-shoulder-bag", description: "Compact shoulder bag.", price: 160, category_id: "2", image_url: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "213", name: "Quilted Chain Bag", slug: "quilted-chain-bag", description: "Quilted design with chain strap.", price: 220, category_id: "2", image_url: "https://images.unsplash.com/photo-1549572180-74431f0d1f05?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1549572180-74431f0d1f05?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "214", name: "Bucket Bag", slug: "bucket-bag", description: "Casual bucket silhouette.", price: 180, category_id: "2", image_url: "https://images.unsplash.com/photo-1512436991641-6745b7e2f3b8?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1512436991641-6745b7e2f3b8?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "215", name: "Satchel Bag", slug: "satchel-bag", description: "Structured satchel bag.", price: 230, category_id: "2", image_url: "https://images.unsplash.com/photo-1545167622-3a6ac8b1a4ec?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1545167622-3a6ac8b1a4ec?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "216", name: "Messenger Bag", slug: "messenger-bag", description: "Classic messenger style.", price: 175, category_id: "2", image_url: "https://images.unsplash.com/photo-1549488340-5d5abfbd8e50?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1549488340-5d5abfbd8e50?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "217", name: "Weekender Duffel", slug: "weekender-duffel", description: "Spacious duffel for trips.", price: 260, category_id: "2", image_url: "https://images.unsplash.com/photo-1518173946687-a17048f2c2d6?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1518173946687-a17048f2c2d6?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "218", name: "Leather Backpack", slug: "leather-backpack", description: "Premium leather backpack.", price: 280, category_id: "2", image_url: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae18?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1525966222134-fcfa99b8ae18?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "219", name: "Hobo Bag", slug: "hobo-bag", description: "Soft-structure hobo bag.", price: 190, category_id: "2", image_url: "https://images.unsplash.com/photo-1518303671181-e0a10f3bd2c3?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1518303671181-e0a10f3bd2c3?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "220", name: "Camera Bag", slug: "camera-bag", description: "Compact camera fit.", price: 170, category_id: "2", image_url: "https://images.unsplash.com/photo-1512314889357-c6f3c69ebbb5?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1512314889357-c6f3c69ebbb5?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "221", name: "Wristlet", slug: "wristlet", description: "Small wrist strap pouch.", price: 95, category_id: "2", image_url: "https://images.unsplash.com/photo-1520974692009-2da68f6b7a4d?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1520974692009-2da68f6b7a4d?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "222", name: "Evening Clutch", slug: "evening-clutch", description: "Elegant clutch for nights out.", price: 140, category_id: "2", image_url: "https://images.unsplash.com/photo-1545167622-3a6ac8b1a4ec?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1545167622-3a6ac8b1a4ec?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "223", name: "Belt Bag", slug: "belt-bag", description: "Hands-free belt bag.", price: 115, category_id: "2", image_url: "https://images.unsplash.com/photo-1512436991641-6745b7e2f3b8?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1512436991641-6745b7e2f3b8?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "224", name: "Drawstring Bag", slug: "drawstring-bag", description: "Casual drawstring pouch.", price: 85, category_id: "2", image_url: "https://images.unsplash.com/photo-1518173946687-a17048f2c2d6?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1518173946687-a17048f2c2d6?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "225", name: "Structured Top Handle", slug: "structured-top-handle", description: "Structured top-handle bag.", price: 210, category_id: "2", image_url: "https://images.unsplash.com/photo-1549488340-5d5abfbd8e50?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1549488340-5d5abfbd8e50?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "212", name: "Mini Shoulder Bag", 
+    slug: "mini-shoulder-bag", 
+    description: "Compact shoulder bag.", 
+    price: 160, 
+    category_id: "2", 
+    image_url: "https://i.pinimg.com/1200x/56/24/80/56248084cf52fadb69bbfe44bc03e13f.jpg", 
+    images: ["https://i.pinimg.com/1200x/56/24/80/56248084cf52fadb69bbfe44bc03e13f.jpg"], 
+    in_stock: true, 
+    featured: false, 
+    created_at: new Date().toISOString(), 
+    updated_at: new Date().toISOString(), 
+    categories: { name: "Bags", slug: "bags" } 
+  },
+
+  { id: "214", name: "Bucket Bag", slug: "bucket-bag", description: "Casual bucket silhouette.", price: 180, category_id: "2", image_url: "https://i.pinimg.com/736x/8b/d8/6d/8bd86d29cc4275d5093f9889ce7f6090.jpg", images: ["https://i.pinimg.com/736x/8b/d8/6d/8bd86d29cc4275d5093f9889ce7f6090.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "217", name: "Weekender Duffel", slug: "weekender-duffel", description: "Spacious duffel for trips.", price: 260, category_id: "2", image_url: "https://i.pinimg.com/1200x/9e/01/16/9e01167ae4e4df104ee03506c1a159ab.jpg", images: ["https://i.pinimg.com/1200x/9e/01/16/9e01167ae4e4df104ee03506c1a159ab.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "218", name: "Leather Backpack", slug: "leather-backpack", description: "Premium leather backpack.", price: 280, category_id: "2", image_url: "https://i.pinimg.com/736x/85/66/2b/85662b946175cafbd7623c3687d19df7.jpg", images: ["https://i.pinimg.com/736x/85/66/2b/85662b946175cafbd7623c3687d19df7.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "221", name: "Wristlet", slug: "wristlet", description: "Small wrist strap pouch.", price: 95, category_id: "2", image_url: "https://i.pinimg.com/736x/a4/f4/7a/a4f47a17d3c4512e4fb239951986329a.jpg", images: ["https://i.pinimg.com/736x/a4/f4/7a/a4f47a17d3c4512e4fb239951986329a.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "223", name: "Belt Bag", slug: "belt-bag", description: "Hands-free belt bag.", price: 115, category_id: "2", image_url: "https://i.pinimg.com/1200x/b4/80/9e/b4809e15b1cd4d9c4779ab8ca112bacb.jpg", images: ["https://i.pinimg.com/1200x/b4/80/9e/b4809e15b1cd4d9c4779ab8ca112bacb.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "225", name: "Structured Top Handle", slug: "structured-top-handle", description: "Structured top-handle bag.", price: 210, category_id: "2", image_url: "https://i.pinimg.com/736x/26/5f/58/265f58e1b1a73d2e3d7a027ed5ec3ed5.jpg", images: ["https://i.pinimg.com/736x/26/5f/58/265f58e1b1a73d2e3d7a027ed5ec3ed5.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
   // Additional Rings (13 more)
   { id: "226", name: "Rose Gold Band", slug: "rose-gold-band", description: "Classic rose gold band.", price: 130, category_id: "3", image_url: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Rings", slug: "rings" } },
   { id: "227", name: "Halo Diamond Ring", slug: "halo-diamond-ring", description: "Halo diamond setting.", price: 720, category_id: "3", image_url: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Rings", slug: "rings" } },
@@ -265,6 +277,7 @@ export const mockProducts: Product[] = [
   },
  
 
+  { id: "266", name: "Moonstone Studs", slug: "moonstone-studs", description: "Iridescent moonstone studs.", price: 90, category_id: "5", image_url: "https://i.pinimg.com/736x/27/bb/04/27bb040f5abe567323f0a4d410e9ddff.jpg", images: ["https://i.pinimg.com/736x/27/bb/04/27bb040f5abe567323f0a4d410e9ddff.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
 
   { id: "260", 
     name: "Aria Drop Earrings", 
@@ -279,13 +292,12 @@ export const mockProducts: Product[] = [
     updated_at: new Date().toISOString(), 
     categories: { name: "earrings", slug: "earrings" } 
   },
-  { id: "261", name: "Rose Hoop Earrings", slug: "rose-hoop-earrings", description: "Classic rose gold hoops.", price: 85, category_id: "5", image_url: "https://i.pinimg.com/736x/ba/6c/d7/ba6cd7a79356b5aaf47042e356574217.jpg", images: ["https://i.pinimg.com/736x/ba/6c/d7/ba6cd7a79356b5aaf47042e356574217.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
   { id: "262", name: "Pearl Stud Earrings", slug: "pearl-stud-earrings", description: "Freshwater pearl studs.", price: 75, category_id: "5", image_url: "https://i.pinimg.com/1200x/7e/7c/5f/7e7c5f98ec6b019b61ac293b5c7b6956.jpg", images: ["https://i.pinimg.com/1200x/7e/7c/5f/7e7c5f98ec6b019b61ac293b5c7b6956.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
+    { id: "261", name: "Rose Hoop Earrings", slug: "rose-hoop-earrings", description: "Classic rose gold hoops.", price: 85, category_id: "5", image_url: "https://i.pinimg.com/736x/ba/6c/d7/ba6cd7a79356b5aaf47042e356574217.jpg", images: ["https://i.pinimg.com/736x/ba/6c/d7/ba6cd7a79356b5aaf47042e356574217.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
+
   { id: "263", name: "Crystal Drop Earrings", slug: "crystal-drop-earrings", description: "Sparkling crystal drops.", price: 95, category_id: "5", image_url: "https://i.pinimg.com/1200x/17/da/88/17da88b5744b91ab4d85de29e6a8af5a.jpg", images: ["https://i.pinimg.com/1200x/17/da/88/17da88b5744b91ab4d85de29e6a8af5a.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
   { id: "264", name: "Minimal Bar Earrings", slug: "minimal-bar-earrings", description: "Sleek bar earrings.", price: 60, category_id: "5", image_url: "https://i.pinimg.com/1200x/6b/ce/93/6bce93c8303a80d2ede1922b1c21cdea.jpg", images: ["https://i.pinimg.com/1200x/6b/ce/93/6bce93c8303a80d2ede1922b1c21cdea.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
-  { id: "266", name: "Moonstone Studs", slug: "moonstone-studs", description: "Iridescent moonstone studs.", price: 90, category_id: "5", image_url: "https://images.unsplash.com/photo-1530092285049-0fd7fd84367f?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1530092285049-0fd7fd84367f?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
-  { id: "268", name: "Floral Charm Earrings", slug: "floral-charm-earrings", description: "Delicate floral charms.", price: 65, category_id: "5", image_url: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
-  { id: "269", name: "Diamond Huggies", slug: "diamond-huggies", description: "Small diamond hoop huggies.", price: 180, category_id: "5", image_url: "https://images.unsplash.com/photo-1606851091202-52c5ab07dfb2?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1606851091202-52c5ab07dfb2?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
-  { id: "270", name: "Sapphire Drop Earrings", slug: "sapphire-drop-earrings", description: "Teardrop sapphire set.", price: 155, category_id: "5", image_url: "https://images.unsplash.com/photo-1543294001-4f3290c91aea?auto=format&fit=crop&q=80", images: ["https://images.unsplash.com/photo-1543294001-4f3290c91aea?auto=format&fit=crop&q=80"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } }
+  { id: "268", name: "Floral Charm Earrings", slug: "floral-charm-earrings", description: "Delicate floral charms.", price: 65, category_id: "5", image_url: "https://i.pinimg.com/1200x/33/bd/66/33bd66690a62945d4e334ebe4c638dcd.jpg", images: ["https://i.pinimg.com/1200x/33/bd/66/33bd66690a62945d4e334ebe4c638dcd.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } },
+  { id: "270", name: "Sapphire Drop Earrings", slug: "sapphire-drop-earrings", description: "Teardrop sapphire set.", price: 155, category_id: "5", image_url: "https://i.pinimg.com/1200x/5e/c5/69/5ec569c46af4c5e62f8171d91a388613.jpg", images: ["https://i.pinimg.com/1200x/5e/c5/69/5ec569c46af4c5e62f8171d91a388613.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Earrings", slug: "earrings" } }
   
 ];
