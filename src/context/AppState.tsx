@@ -77,6 +77,11 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     localStorage.setItem(storageKey(user?.id || null, "cart"), JSON.stringify(cart));
   }, [user?.id, cart]);
+
+  useEffect(() => {
+    const od = localStorage.getItem(storageKey(user?.id || null, "orders"));
+    setOrders(od ? JSON.parse(od) : []);
+  }, [user?.id]);
   useEffect(() => {
     localStorage.setItem(storageKey(user?.id || null, "orders"), JSON.stringify(orders));
   }, [user?.id, orders]);

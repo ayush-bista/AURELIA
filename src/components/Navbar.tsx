@@ -3,11 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingBag, Search, Heart, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useAppState } from "@/context/AppState";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { user } = useAppState();
 
   useEffect(() => {
     // Close mobile menu on route change
@@ -94,7 +96,7 @@ const Navbar = () => {
               <Heart className="w-5 h-5" />
             </Link>
             <Link
-              to="/account"
+              to={user ? "/profile" : "/account"}
               className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"
               aria-label="Account"
             >

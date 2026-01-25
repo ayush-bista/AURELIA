@@ -22,7 +22,7 @@ const categories = [
     name: "Bracelets & Rings",
     description: "Stack, layer, and express yourself",
     image: modelBracelets,
-    href: "/jewelry",
+    href: "/rings",
   },
 ];
 
