@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const CheckoutPage = () => {
   const { data: products } = useProducts();
-  const { cart, updateQuantity, removeFromCart, requireAuth } = useAppState();
+  const { cart, updateQuantity, removeFromCart, requireAuth, placeOrder } = useAppState();
   const navigate = useNavigate();
 
   const items = (products || []).filter((p) => cart.some((c) => c.productId === p.id));
@@ -85,7 +85,8 @@ const CheckoutPage = () => {
                       className="w-full"
                       onClick={() => {
                         if (!requireAuth(navigate)) return;
-                        navigate("/account");
+                        placeOrder();
+                        navigate("/profile");
                       }}
                     >
                       Proceed to Payment

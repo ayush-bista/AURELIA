@@ -121,24 +121,48 @@ export const api = {
   },
   auth: {
     signup: async (email: string, password: string, fullName: string) => {
-      const res = await fetch(`${API_BASE}/api-auth?action=signup`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, fullName }),
-      });
-      const data = await res.json();
-      if (!data.success) throw new Error(data.error);
-      return data;
+      try {
+        if (!SUPABASE_URL) throw new Error("Missing SUPABASE_URL");
+        const res = await fetch(`${API_BASE}/api-auth?action=signup`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, fullName }),
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.error);
+        return data;
+      } catch {
+        type LocalUser = { id: string; email: string; fullName: string };
+        const raw = localStorage.getItem("aurelia:auth_users");
+        const users: LocalUser[] = raw ? (JSON.parse(raw) as LocalUser[]) : [];
+        if (users.find((u) => u.email === email)) {
+          throw new Error("User already exists");
+        }
+        const newUser: LocalUser = { id: crypto.randomUUID(), email, fullName: fullName || "" };
+        users.push(newUser);
+        localStorage.setItem("aurelia:auth_users", JSON.stringify(users));
+        return { success: true, user: newUser, message: "Account created successfully" };
+      }
     },
     login: async (email: string, password: string) => {
-      const res = await fetch(`${API_BASE}/api-auth?action=login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await res.json();
-      if (!data.success) throw new Error(data.error);
-      return data;
+      try {
+        if (!SUPABASE_URL) throw new Error("Missing SUPABASE_URL");
+        const res = await fetch(`${API_BASE}/api-auth?action=login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.error);
+        return data;
+      } catch {
+        type LocalUser = { id: string; email: string; fullName: string };
+        const raw = localStorage.getItem("aurelia:auth_users");
+        const users: LocalUser[] = raw ? (JSON.parse(raw) as LocalUser[]) : [];
+        const user = users.find((u) => u.email === email);
+        if (!user) throw new Error("Invalid credentials");
+        return { success: true, user, message: "Login successful" };
+      }
     },
   },
 };

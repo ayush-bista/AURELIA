@@ -33,6 +33,8 @@ type AppStateValue = {
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   requireAuth: (navigate?: ReturnType<typeof useNavigate>, redirectPath?: string) => boolean;
+  orders: { id: string; items: CartItem[]; created_at: string }[];
+  placeOrder: () => void;
 };
 
 const AppStateContext = createContext<AppStateValue | undefined>(undefined);
@@ -55,6 +57,10 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
     const raw = localStorage.getItem(storageKey(user?.id || null, "cart"));
     return raw ? JSON.parse(raw) : [];
   });
+  const [orders, setOrders] = useState<{ id: string; items: CartItem[]; created_at: string }[]>(() => {
+    const raw = localStorage.getItem(storageKey(user?.id || null, "orders"));
+    return raw ? JSON.parse(raw) : [];
+  });
 
   useEffect(() => {
     localStorage.setItem("aurelia:user", JSON.stringify(user));
@@ -71,6 +77,9 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     localStorage.setItem(storageKey(user?.id || null, "cart"), JSON.stringify(cart));
   }, [user?.id, cart]);
+  useEffect(() => {
+    localStorage.setItem(storageKey(user?.id || null, "orders"), JSON.stringify(orders));
+  }, [user?.id, orders]);
 
  
 
@@ -137,6 +146,20 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
   const updateQuantity = (productId: string, quantity: number) => {
     setCart((prev) => prev.map((i) => (i.productId === productId ? { ...i, quantity } : i)));
   };
+  const placeOrder = () => {
+    if (!user) {
+      toast.error("Please sign in to place order");
+      return;
+    }
+    if (cart.length === 0) {
+      toast.error("Your bag is empty");
+      return;
+    }
+    const order = { id: crypto.randomUUID(), items: cart, created_at: new Date().toISOString() };
+    setOrders((prev) => [order, ...prev]);
+    setCart([]);
+    toast.success("Order placed");
+  };
 
   const requireAuth: AppStateValue["requireAuth"] = (navigate, redirectPath = "/account") => {
     if (user) return true;
@@ -160,8 +183,10 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
       removeFromCart,
       updateQuantity,
       requireAuth,
+      orders,
+      placeOrder,
     }),
-    [user, wishlist, cart]
+    [user, wishlist, cart, orders]
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

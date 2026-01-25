@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import { useAppState } from "@/context/AppState";
 
 const AccountPage = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
@@ -27,7 +27,7 @@ const AccountPage = () => {
       } else {
         await signupEmail(email, password, fullName);
       }
-      navigate("/");
+      navigate("/profile");
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : "Something went wrong";
       toast.error(message);
@@ -125,20 +125,12 @@ const AccountPage = () => {
               <Button
                 variant="outline"
                 className="w-full"
-                onClick={() => {
-                  loginWithProvider("google");
-                  navigate("/");
-                }}
               >
                 Continue with Google
               </Button>
               <Button
                 variant="outline"
                 className="w-full"
-                onClick={() => {
-                  loginWithProvider("apple");
-                  navigate("/");
-                }}
               >
                 Continue with Apple
               </Button>
