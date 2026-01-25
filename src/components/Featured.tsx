@@ -39,21 +39,21 @@ const Featured = () => {
                 </div>
               ))
             : products?.map((product, index) => (
-                <AnimatedSection key={product.id} delay={index * 0.1}>
+                <AnimatedSection key={product.id} delay={index * 0.05}>
                   <Link
                     to={`/product/${product.slug}`}
                     className="group cursor-pointer block"
                   >
                     <motion.div
                       whileHover={{ y: -4 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.2 }}
                       className="aspect-square bg-secondary rounded-sm mb-4 overflow-hidden"
                     >
                       {product.image_url ? (
                         <img
                           src={product.image_url}
                           alt={product.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-champagne to-blush transition-transform duration-500 group-hover:scale-105">

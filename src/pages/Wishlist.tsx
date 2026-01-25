@@ -3,10 +3,14 @@ import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { useProducts } from "@/hooks/useProducts";
+import { useAppState } from "@/context/AppState";
+import ProductCard from "@/components/ProductCard";
 
 const WishlistPage = () => {
-  // In a real app, this would fetch from the database
-  const wishlistItems: any[] = [];
+  const { data: products } = useProducts();
+  const { wishlist } = useAppState();
+  const items = (products || []).filter((p) => wishlist.includes(p.id));
 
   return (
     <Layout>
@@ -21,7 +25,7 @@ const WishlistPage = () => {
             </p>
           </AnimatedSection>
 
-          {wishlistItems.length === 0 ? (
+          {items.length === 0 ? (
             <AnimatedSection delay={0.1} className="text-center py-16">
               <div className="w-20 h-20 rounded-full bg-champagne flex items-center justify-center mx-auto mb-6">
                 <Heart className="w-10 h-10 text-gold" />
@@ -38,7 +42,9 @@ const WishlistPage = () => {
             </AnimatedSection>
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {/* Wishlist items would be mapped here */}
+              {items.map((product, index) => (
+                <ProductCard key={product.id} product={product} index={index} />
+              ))}
             </div>
           )}
         </div>

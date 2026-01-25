@@ -13,7 +13,7 @@ const EarringsPage = () => {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center pt-20">
         <div className="absolute inset-0">
           <img
-            src={modelEarrings}
+            src="https://images.unsplash.com/photo-1701777892770-df3bf8006fd8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Earrings collection"
             className="w-full h-full object-cover"
           />

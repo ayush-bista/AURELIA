@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { api } from "@/lib/api";
+import { useAppState } from "@/context/AppState";
 
 const AccountPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -15,6 +15,7 @@ const AccountPage = () => {
   const [fullName, setFullName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { loginEmail, signupEmail, loginWithProvider } = useAppState();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,11 +23,9 @@ const AccountPage = () => {
 
     try {
       if (isLogin) {
-        await api.auth.login(email, password);
-        toast.success("Welcome back!");
+        await loginEmail(email, password);
       } else {
-        await api.auth.signup(email, password, fullName);
-        toast.success("Account created successfully!");
+        await signupEmail(email, password, fullName);
       }
       navigate("/");
     } catch (error: unknown) {
@@ -119,6 +118,31 @@ const AccountPage = () => {
                 </button>
               </p>
             </form>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="bg-background p-8 rounded-sm shadow-soft space-y-3">
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => {
+                  loginWithProvider("google");
+                  navigate("/");
+                }}
+              >
+                Continue with Google
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => {
+                  loginWithProvider("apple");
+                  navigate("/");
+                }}
+              >
+                Continue with Apple
+              </Button>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2} className="mt-8 text-center">

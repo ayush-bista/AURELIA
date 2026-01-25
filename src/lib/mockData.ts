@@ -1,4 +1,5 @@
 import { Product, Category } from "@/hooks/useProducts";
+import crystalHeartBagImg from "@/assets/Shraddha Hand bag.jpg";
 
 export const mockCategories: Category[] = [
   {
@@ -211,7 +212,7 @@ export const mockProducts: Product[] = [
   },
 
   { id: "214", name: "Bucket Bag", slug: "bucket-bag", description: "Casual bucket silhouette.", price: 180, category_id: "2", image_url: "https://i.pinimg.com/736x/8b/d8/6d/8bd86d29cc4275d5093f9889ce7f6090.jpg", images: ["https://i.pinimg.com/736x/8b/d8/6d/8bd86d29cc4275d5093f9889ce7f6090.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
-  { id: "272", name: "Crystal Heart Bag", slug: "Crystal Heart Bag", description: "Luxury Mini Hand Bag.", price: 560, category_id: "2", image_url: "src\assets\Shraddha Hand bag.jpg", images: ["src\assets\Shraddha Hand bag.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
+  { id: "272", name: "Crystal Heart Bag", slug: "crystal-heart-bag", description: "Luxury Mini Hand Bag.", price: 560, category_id: "2", image_url: crystalHeartBagImg, images: [crystalHeartBagImg], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
 
   { id: "217", name: "Weekender Duffel", slug: "weekender-duffel", description: "Spacious duffel for trips.", price: 260, category_id: "2", image_url: "https://i.pinimg.com/1200x/9e/01/16/9e01167ae4e4df104ee03506c1a159ab.jpg", images: ["https://i.pinimg.com/1200x/9e/01/16/9e01167ae4e4df104ee03506c1a159ab.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },
   { id: "218", name: "Leather Backpack", slug: "leather-backpack", description: "Premium leather backpack.", price: 280, category_id: "2", image_url: "https://i.pinimg.com/736x/85/66/2b/85662b946175cafbd7623c3687d19df7.jpg", images: ["https://i.pinimg.com/736x/85/66/2b/85662b946175cafbd7623c3687d19df7.jpg"], in_stock: true, featured: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(), categories: { name: "Bags", slug: "bags" } },

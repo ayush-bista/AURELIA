@@ -100,12 +100,13 @@ const Navbar = () => {
             >
               <User className="w-5 h-5" />
             </Link>
-            <button
+            <Link
+              to="/checkout"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"
               aria-label="Shopping bag"
             >
               <ShoppingBag className="w-5 h-5" />
-            </button>
+            </Link>
             <button
               className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

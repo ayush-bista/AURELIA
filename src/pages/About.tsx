@@ -159,7 +159,7 @@ const AboutPage = () => {
             <AnimatedSection delay={0.2} direction="right" className="order-1 lg:order-2">
               <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-elevated">
                 <img
-                  src="https://i.pinimg.com/736x/5c/54/d5/5c54d5d184f6267ba56c2d8ebad0055c.jpg"
+                  src="src\assets\Shraddha Home.jpg"
                   alt="Craftsmanship"
                   className="w-full h-full object-cover"
                 />

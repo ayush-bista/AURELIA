@@ -13,7 +13,7 @@ const JewelryPage = () => {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center pt-20">
         <div className="absolute inset-0">
           <img
-            src="https://i.pinimg.com/1200x/9f/a0/53/9fa053847f89ef2ba1bc5dadedbc428e.jpg"
+            src="https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Necklace collection"
             className="w-full h-full object-cover"
           />

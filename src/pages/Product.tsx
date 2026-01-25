@@ -1,16 +1,22 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { useProduct } from "@/hooks/useProducts";
+import { useProduct, useProducts } from "@/hooks/useProducts";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Heart, Minus, Plus, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { useAppState } from "@/context/AppState";
+import { useNavigate } from "react-router-dom";
+import ProductCard from "@/components/ProductCard";
 
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { data: product, isLoading } = useProduct(slug || "");
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, toggleWishlist, isWishlisted, requireAuth } = useAppState();
+  const navigate = useNavigate();
+  const { data: related } = useProducts(product?.categories?.slug);
 
   if (isLoading) {
     return (
@@ -56,13 +62,19 @@ const ProductPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Breadcrumb */}
           <AnimatedSection className="mb-8">
+            {(() => {
+              const backHref = product.categories?.slug ? `/${product.categories.slug}` : "/collections";
+              const backLabel = product.categories?.name ? `Back to ${product.categories.name}` : "Back to collections";
+              return (
             <Link
-              to="/collections"
+              to={backHref}
               className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to collections
+              {backLabel}
             </Link>
+              );
+            })()}
           </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -134,11 +146,22 @@ const ProductPage = () => {
                     size="lg"
                     className="flex-1"
                     disabled={!product.in_stock}
+                    onClick={() => {
+                      if (!requireAuth(navigate)) return;
+                      addToCart(product, quantity);
+                    }}
                   >
                     {product.in_stock ? "Add to Bag" : "Sold Out"}
                   </Button>
-                  <Button size="lg" variant="outline">
-                    <Heart className="w-5 h-5" />
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    onClick={() => {
+                      if (!requireAuth(navigate)) return;
+                      toggleWishlist(product);
+                    }}
+                  >
+                    <Heart className={`w-5 h-5 ${isWishlisted(product.id) ? "text-gold" : ""}`} />
                   </Button>
                 </div>
 
@@ -164,6 +187,23 @@ const ProductPage = () => {
           </div>
         </div>
       </section>
+      {related && related.length > 1 && (
+        <section className="pb-20 bg-background">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <AnimatedSection className="mb-8">
+              <h2 className="font-serif text-3xl md:text-4xl text-foreground">You may also like</h2>
+            </AnimatedSection>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {related
+                .filter((p) => p.id !== product.id)
+                .slice(0, 4)
+                .map((p, index) => (
+                  <ProductCard key={p.id} product={p} index={index} />
+                ))}
+            </div>
+          </div>
+        </section>
+      )}
     </Layout>
   );
 };

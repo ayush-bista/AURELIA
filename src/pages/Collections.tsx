@@ -76,7 +76,7 @@ const CollectionsPage = () => {
                   </div>
                 ))
               : products?.map((product, index) => (
-                  <ProductCard key={product.id} product={product} index={index} />
+                  <ProductCard key={product.id} product={product} index={index} delayMultiplier={0.03} duration={0.2} />
                 ))}
           </div>
         </div>
