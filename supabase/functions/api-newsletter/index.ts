@@ -1,4 +1,8 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+const serve = (handler: (req: Request) => Response | Promise<Response>) => {
+  addEventListener("fetch", (event: FetchEvent) => {
+    event.respondWith(handler(event.request));
+  });
+};
 
 const ALLOWED_METHODS = "POST, OPTIONS";
 const corsHeaders = {
