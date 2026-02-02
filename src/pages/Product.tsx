@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useAppState } from "@/context/AppState";
 import { useNavigate } from "react-router-dom";
 import ProductCard from "@/components/ProductCard";
+import { formatPrice } from "@/lib/currency";
 
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -110,7 +111,7 @@ const ProductPage = () => {
                 </div>
 
                 <p className="text-2xl font-medium text-foreground">
-                  ${product.price}
+                  {formatPrice(product.price)}
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
@@ -179,7 +180,7 @@ const ProductPage = () => {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Shipping</span>
-                    <span>Free shipping on orders over $100</span>
+                    <span>Free shipping on orders over Rs. 100</span>
                   </div>
                 </div>
               </div>

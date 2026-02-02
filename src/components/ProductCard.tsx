@@ -4,6 +4,7 @@ import AnimatedSection from "./AnimatedSection";
 import { Product } from "@/hooks/useProducts";
 import { Heart } from "lucide-react";
 import { useAppState } from "@/context/AppState";
+import { formatPrice } from "@/lib/currency";
 
 interface ProductCardProps {
   product: Product;
@@ -56,7 +57,7 @@ const ProductCard = ({ product, index = 0, delayMultiplier = 0.05, duration }: P
           <h3 className="font-medium text-foreground group-hover:text-gold transition-colors line-clamp-1">
             {product.name}
           </h3>
-          <p className="text-sm text-muted-foreground">${product.price}</p>
+          <p className="text-sm text-muted-foreground">{formatPrice(product.price)}</p>
         </div>
       </Link>
     </AnimatedSection>

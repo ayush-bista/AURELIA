@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { useFeaturedProducts } from "@/hooks/useProducts";
 import { Skeleton } from "./ui/skeleton";
+import { formatPrice } from "@/lib/currency";
 
 const Featured = () => {
   const { data: products, isLoading } = useFeaturedProducts();
@@ -68,7 +69,7 @@ const Featured = () => {
                         {product.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
-                        ${product.price}
+                        {formatPrice(product.price)}
                       </p>
                     </div>
                   </Link>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useProducts } from "@/hooks/useProducts";
 import { useAppState } from "@/context/AppState";
 import { Link, useNavigate } from "react-router-dom";
+import { formatPrice } from "@/lib/currency";
 
 const CheckoutPage = () => {
   const { data: products } = useProducts();
@@ -48,7 +49,7 @@ const CheckoutPage = () => {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-medium text-foreground">{p.name}</h3>
-                        <p className="text-sm text-muted-foreground">${p.price}</p>
+                        <p className="text-sm text-muted-foreground">{formatPrice(p.price)}</p>
                         <div className="mt-3 flex items-center gap-3">
                           <Button
                             variant="outline"
@@ -74,7 +75,7 @@ const CheckoutPage = () => {
                 <AnimatedSection className="bg-background p-6 rounded-sm shadow-soft">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span className="font-medium text-foreground">${total.toFixed(2)}</span>
+                    <span className="font-medium text-foreground">{formatPrice(total)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Shipping</span>

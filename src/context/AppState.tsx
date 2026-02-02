@@ -160,7 +160,9 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
       toast.error("Your bag is empty");
       return;
     }
-    const order = { id: crypto.randomUUID(), items: cart, created_at: new Date().toISOString() };
+    // Generate a real-life looking order ID (e.g., ORD-123456)
+    const orderId = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
+    const order = { id: orderId, items: cart, created_at: new Date().toISOString() };
     setOrders((prev) => [order, ...prev]);
     setCart([]);
     toast.success("Order placed");
