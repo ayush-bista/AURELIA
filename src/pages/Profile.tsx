@@ -43,8 +43,12 @@ const ProfilePage = () => {
             <Card className="border-none shadow-soft bg-white/50 backdrop-blur-sm">
               <CardContent className="flex flex-col md:flex-row items-center justify-between p-8 gap-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <UserIcon className="h-8 w-8 text-primary" />
+                  <div className="h-16 w-16 rounded-full bg-primary/10 overflow-hidden">
+                    <img
+                      src={`https://api.dicebear.com/9.x/fun-emoji/png?seed=${encodeURIComponent(user.id)}&size=128`}
+                      alt={user.fullName || user.email || "User"}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="text-center md:text-left">
                     <h1 className="font-serif text-3xl md:text-4xl text-foreground">
@@ -149,7 +153,7 @@ const ProfilePage = () => {
                         <Separator className="my-4" />
                         <div className="flex justify-between items-center">
                           <span className="font-medium text-muted-foreground">Total Amount</span>
-                          <span className="text-lg font-serif font-bold text-foreground">{formatPrice(total)}</span>
+                          <span className="text-lg font-bold text-foreground">{formatPrice(total)}</span>
                         </div>
                       </CardContent>
                     </Card>

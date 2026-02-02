@@ -33,7 +33,7 @@ type AppStateValue = {
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   requireAuth: (navigate?: ReturnType<typeof useNavigate>, redirectPath?: string) => boolean;
-  orders: { id: string; items: CartItem[]; created_at: string }[];
+  orders: { id: string; userId?: string; items: CartItem[]; created_at: string }[];
   placeOrder: () => void;
 };
 
@@ -57,7 +57,7 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
     const raw = localStorage.getItem(storageKey(user?.id || null, "cart"));
     return raw ? JSON.parse(raw) : [];
   });
-  const [orders, setOrders] = useState<{ id: string; items: CartItem[]; created_at: string }[]>(() => {
+  const [orders, setOrders] = useState<{ id: string; userId?: string; items: CartItem[]; created_at: string }[]>(() => {
     const raw = localStorage.getItem(storageKey(user?.id || null, "orders"));
     return raw ? JSON.parse(raw) : [];
   });
@@ -72,11 +72,11 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     localStorage.setItem(storageKey(user?.id || null, "wishlist"), JSON.stringify(wishlist));
-  }, [user?.id, wishlist]);
+  }, [wishlist]);
 
   useEffect(() => {
     localStorage.setItem(storageKey(user?.id || null, "cart"), JSON.stringify(cart));
-  }, [user?.id, cart]);
+  }, [cart]);
 
   useEffect(() => {
     const od = localStorage.getItem(storageKey(user?.id || null, "orders"));
@@ -84,7 +84,7 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
   }, [user?.id]);
   useEffect(() => {
     localStorage.setItem(storageKey(user?.id || null, "orders"), JSON.stringify(orders));
-  }, [user?.id, orders]);
+  }, [orders]);
 
  
 
@@ -162,7 +162,7 @@ const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
     }
     // Generate a real-life looking order ID (e.g., ORD-123456)
     const orderId = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
-    const order = { id: orderId, items: cart, created_at: new Date().toISOString() };
+    const order = { id: orderId, userId: user.id, items: cart, created_at: new Date().toISOString() };
     setOrders((prev) => [order, ...prev]);
     setCart([]);
     toast.success("Order placed");
