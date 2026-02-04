@@ -22,8 +22,8 @@ const CollectionsPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         </div>
-        <AnimatedSection className="relative z-10 text-primary-foreground px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full text-primary-foreground">
+          <AnimatedSection>
             <div className="max-w-xl">
               <span className="text-sm tracking-widest text-gold uppercase block">
                 Collections
@@ -36,8 +36,8 @@ const CollectionsPage = () => {
                 Explore our curated pieces across categories
               </p>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
       </section>
 
       {/* Categories Navigation */}

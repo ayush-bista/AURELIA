@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingBag, Search, Heart, User } from "lucide-react";
+import { Menu, X, ShoppingBag, Heart, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useAppState } from "@/context/AppState";
@@ -82,12 +82,6 @@ const Navbar = () => {
 
           {/* Right Icons */}
           <div className="flex items-center gap-2">
-            <button
-              className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
             <Link
               to="/wishlist"
               className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"

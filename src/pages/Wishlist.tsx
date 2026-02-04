@@ -9,13 +9,13 @@ import ProductCard from "@/components/ProductCard";
 
 const WishlistPage = () => {
   const { data: products } = useProducts();
-  const { wishlist } = useAppState();
+  const { wishlist, addToCart } = useAppState();
   const items = (products || []).filter((p) => wishlist.includes(p.id));
 
   return (
     <Layout>
       <section className="min-h-screen pt-32 pb-16 bg-cream">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
             <h1 className="font-serif text-4xl md:text-5xl mb-4 text-foreground">
               Your Wishlist
@@ -41,11 +41,18 @@ const WishlistPage = () => {
               </Button>
             </AnimatedSection>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <>
+              <div className="flex justify-end mb-6">
+                <Button onClick={() => items.forEach((p) => addToCart(p, 1))}>
+                  Add all to bag
+                </Button>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {items.map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}
-            </div>
+              </div>
+            </>
           )}
         </div>
       </section>
