@@ -94,7 +94,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection direction="left">
-              <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-elevated">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-elevated">
                 <img
                   src="https://i.pinimg.com/1200x/62/aa/7b/62aa7be7457b32531c59e289eb0e0d90.jpg"
                   alt="Founder"
@@ -157,7 +157,7 @@ const AboutPage = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2} direction="right" className="order-1 lg:order-2">
-              <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-elevated">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-elevated">
               {/* public/image/Shraddha Home.jpg */}
                 <img
                   src="/Shraddha Home.jpg"
