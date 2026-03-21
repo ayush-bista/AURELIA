@@ -160,7 +160,7 @@ const AboutPage = () => {
               <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-elevated">
               {/* public/image/Shraddha Home.jpg */}
                 <img
-                  src="src\assets\Shraddha Home.jpg"
+                  src="/Shraddha Home.jpg"
                   alt="Craftsmanship"
                   className="w-full h-full object-cover"
                 />
