@@ -13,7 +13,7 @@ const About = () => {
               <img
                 // src="https://i.pinimg.com/1200x/62/aa/7b/62aa7be7457b32531c59e289eb0e0d90.jpg"
                 // src="src/assets/Shraddha ring.jpg"
-                src="public\Shraddha-ring.jpg"
+                src="/Shraddha-ring.jpg"
                 alt="Woman with elegant accessories"
                 className="w-full h-full object-cover"
               />
