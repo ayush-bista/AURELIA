@@ -1,15 +1,4 @@
-# Aurelia™
-
-<div align="center">
-  <h3>✨ Live Demo: <a href="https://aurelia-phi.vercel.app/">https://aurelia-phi.vercel.app/</a> ✨</h3>
-</div>
-
-<br />
-
-> **⚠️ IMPORTANT MESSAGE:** 
-> This is just a practice/demo project. This is not a real website or e-commerce store. It is built strictly for practice and portfolio purposes.
-
----
+# Aurelia
 
 ## 📖 About The Project
 
@@ -37,14 +26,14 @@ The store features a wide range of curated categories:
   - Using the **Wishlist** (saving favorite items for later checkout) also strictly requires an active user session/login. 
 - **Checkout (`/checkout`):** A streamlined, mockup checkout process for reviewing your cart and simulating a purchase flow.
 
-## 🚀 Getting Started Locally
+<div align="center">
+  <h3>✨ Live Demo: <a href="https://aurelia-phi.vercel.app/">https://aurelia-phi.vercel.app/</a> ✨</h3>
+</div>
 
-If you'd like to run this demo project locally:
+<br />
 
-1. Clone the repository
-2. Install dependencies with `npm install`
-3. Start the development server with `npm run dev`
-4. Open the local link (usually `http://localhost:8080`) in your browser.
+> **⚠️ IMPORTANT MESSAGE:** 
+> This is just a practice/demo project. This is not a real website or e-commerce store. It is built strictly for practice and portfolio purposes.
 
 ---
 *Built as a practice initiative to explore modern React, Vite, and front-end UI/UX principles.*
