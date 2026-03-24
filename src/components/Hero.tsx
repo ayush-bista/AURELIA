@@ -14,7 +14,7 @@ const Hero = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           src={heroModel}
-          alt="Woman wearing elegant gold jewelry"
+          alt="Modern living room setup"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
@@ -47,8 +47,8 @@ const Hero = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="text-lg text-muted-foreground mb-8 leading-relaxed"
           >
-            Discover our curated collection of handcrafted accessories designed 
-            for the modern woman. Each piece tells a story of refined beauty.
+            Discover our curated collection of minimalist furniture designed 
+            for the modern home. Each piece tells a story of refined comfort.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
