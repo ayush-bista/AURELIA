@@ -18,7 +18,7 @@ const CollectionsPage = () => {
           <img
             src={bestSellerBanner}
             alt="Collections"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[75%] md:object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         </div>
