@@ -13,7 +13,7 @@ const BraceletsPage = () => {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center pt-20">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80"
+            src="https://i.pinimg.com/1200x/c3/ab/cb/c3abcbd1eb2eebdc0dbefa6b53f5d1b9.jpg"
             alt="Bracelets collection"
             className="w-full h-full object-cover"
           />
