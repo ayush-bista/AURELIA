@@ -13,7 +13,7 @@ const RingsPage = () => {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center pt-20">
         <div className="absolute inset-0">
           <img
-            src=""
+            src="https://i.pinimg.com/1200x/50/fb/d2/50fbd246e9941ba390475712f3162ac8.jpg"
             alt="Rings collection"
             className="w-full h-full object-cover"
           />
